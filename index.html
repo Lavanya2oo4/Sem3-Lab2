@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        form{
+            width:70vw;
+            margin: auto;
+        }
+        button{
+            margin: 2vh;
+            padding: 1vh;
+            border-radius: 10px;
+            color:white;
+            background-color:black;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        button:hover{
+            box-shadow: 3px 4px 2px rgb(128, 112, 112);
+            background-color: rgb(42, 41, 41);
+        }
+        input{
+            padding:1vh;
+        }
+        form{
+            padding: 2vh;
+            
+        }
+        div{
+            padding:1vh;
+            text-align:left;
+            
+        }
+        h1{
+            text-align: center;
+            margin:2vh;
+            color:rgb(106, 106, 153);
+            text-decoration-line: underline;
+        }
+        hr{
+            width:70%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LAB 2</h1>
+    <form>
+        
+        <div>
+            <button onclick="displayAll()">All Names</button>
+        </div>
+
+        <div>
+            <button onclick="displayHealthIssues()">Health Issues</button><input type="number" placeholder="Enter the number">
+        </div>
+
+        <div>
+         <label for="imperial">Imperial</label>   
+        <input type="radio" name="weightScale" id="imperial">
+        <label for="metric">Metric</label>
+        <input type="radio" name="weightScale" id="metric">
+        <button onclick="displayWeight()">Weight</button>
+        </div>
+
+        
+        <button onclick="Intelligence_Friendly()">Intelligence_Friendly</button><br>
+        <button onclick="AvgIntelligence()">Average Intelligence</button>
+        <button onclick="AvgIntelligenceChildFriendly()">Average Intelligence for Child Friendly=4</button><br>
+
+
+    </form>
+    <hr>
+
+    <div class="output">
+
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
