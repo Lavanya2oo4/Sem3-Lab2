@@ -314,15 +314,18 @@ async function avgIntelligenceChildFriendly() {
     let dataParsed = await data.json()
 
 
+    let elm=0
     let intelligence = 0
     dataParsed.forEach(element => {
 
+        if(element.child_friendly>=4){
         intelligence += element.intelligence
-
+        elm+=1
+        }
 
     });
 
-    let avg = intelligence / dataParsed.length
+    let avg = intelligence / elm
     avg = avg.toFixed(2)
 
     let dataHead = document.createElement("h3")
