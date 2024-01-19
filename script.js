@@ -174,7 +174,7 @@ async function displayWeight() {
     let iteration = 0
     dataParsed.forEach(element => {
 
-        console.log(element)
+        // console.log(element)
 
         //to print the heading
         if (iteration == 0) {
@@ -187,12 +187,12 @@ async function displayWeight() {
         }
 
 
-        if(currentSelection=="imperial"){
+        if (currentSelection == "imperial") {
             output.append(`${element.weight.imperial}`)
 
         }
-        else{
-        output.append(`${element.weight.metric}`)
+        else {
+            output.append(`${element.weight.metric}`)
 
         }
 
@@ -204,4 +204,135 @@ async function displayWeight() {
 
 
 
+}
+
+
+
+// ------------------------------------------------------------------ 
+
+
+
+
+async function intelligenceFriendly() {
+    let output = document.getElementById("output")
+    output.innerHTML = ""
+
+
+
+    //getting data
+
+    let url = "https://api.thecatapi.com/v1/breeds"
+    let data = await fetch(url)
+    let dataParsed = await data.json()
+
+
+    let iteration = 0
+    dataParsed.forEach(element => {
+
+        // console.log(element)
+
+        //to print the heading
+        if (iteration == 0) {
+            let dataHead = document.createElement("h3")
+            dataHead.innerHTML = `I - F`
+
+            output.appendChild(dataHead)
+            iteration += 1
+
+        }
+
+
+
+        output.append(`${element.intelligence} - ${element.child_friendly}`)
+
+
+
+
+        // to print a line break
+        let break_ = document.createElement("br")
+        output.appendChild(break_)
+    });
+
+
+}
+
+
+
+
+// ---------------------------------------------------------------------
+
+
+
+async function avgIntelligence() {
+    let output = document.getElementById("output")
+    output.innerHTML = ""
+
+
+    //getting data
+
+    let url = "https://api.thecatapi.com/v1/breeds"
+    let data = await fetch(url)
+    let dataParsed = await data.json()
+
+
+    let intelligence = 0
+    dataParsed.forEach(element => {
+
+        intelligence += element.intelligence
+
+
+    });
+
+    let avg = intelligence / dataParsed.length
+    avg = avg.toFixed(2)
+
+    let dataHead = document.createElement("h3")
+    dataHead.innerHTML = `Average Intelligence: ${avg}`
+
+    output.appendChild(dataHead)
+
+
+
+    // to print a line break
+    let break_ = document.createElement("br")
+    output.appendChild(break_)
+}
+
+
+
+// ---------------------------------------------------------------
+
+async function avgIntelligenceChildFriendly() {
+    let output = document.getElementById("output")
+    output.innerHTML = ""
+
+
+    //getting data
+
+    let url = "https://api.thecatapi.com/v1/breeds"
+    let data = await fetch(url)
+    let dataParsed = await data.json()
+
+
+    let intelligence = 0
+    dataParsed.forEach(element => {
+
+        intelligence += element.intelligence
+
+
+    });
+
+    let avg = intelligence / dataParsed.length
+    avg = avg.toFixed(2)
+
+    let dataHead = document.createElement("h3")
+    dataHead.innerHTML = `Average Intelligence: ${avg}`
+
+    output.appendChild(dataHead)
+
+
+
+    // to print a line break
+    let break_ = document.createElement("br")
+    output.appendChild(break_)
 }
