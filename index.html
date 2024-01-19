@@ -75,6 +75,11 @@
             margin:2vh 0;
             color:#0d6efd;
         }
+
+        h4{
+            margin:2vh 0;
+            color:#fd0d0d;
+        }
     </style>
 </head>
 
@@ -89,12 +94,12 @@
 
         <div>
             <button onclick="displayHealthIssues()">Health Issues</button><input type="number"
-                placeholder="Enter the number">
+                placeholder="Enter the number" id="healthIssue">
         </div>
 
         <div>
             <label for="imperial">Imperial</label>
-            <input type="radio" name="weightScale" id="imperial">
+            <input type="radio" name="weightScale" id="imperial" >
             <label for="metric">Metric</label>
             <input type="radio" name="weightScale" id="metric">
             <button onclick="displayWeight()">Weight</button>
